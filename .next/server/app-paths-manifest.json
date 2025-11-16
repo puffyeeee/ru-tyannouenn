@@ -1,1 +1,13 @@
-{}
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/admin/questions/page": "app/admin/questions/page.js",
+  "/api/character-feedback/route": "app/api/character-feedback/route.js",
+  "/api/chat/route": "app/api/chat/route.js",
+  "/api/character-comment/route": "app/api/character-comment/route.js",
+  "/chat/page": "app/chat/page.js",
+  "/page": "app/page.js",
+  "/pdf-practice/page": "app/pdf-practice/page.js",
+  "/pdf-summary/page": "app/pdf-summary/page.js",
+  "/result/page": "app/result/page.js",
+  "/api/encourage/route": "app/api/encourage/route.js"
+}

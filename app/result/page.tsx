@@ -114,21 +114,6 @@ export default function ResultPage() {
         }}
       >
         <button
-          onClick={() => router.push("/quiz")}
-          style={{
-            padding: "10px 14px",
-            borderRadius: 999,
-            border: "none",
-            background:
-              "linear-gradient(135deg, #b2f7ef 0%, #ffdfd3 50%, #fff7ae 100%)",
-            fontSize: 14,
-            fontWeight: 600,
-            cursor: "pointer",
-          }}
-        >
-          もう一回クイズする
-        </button>
-        <button
           onClick={() => router.push("/")}
           style={{
             padding: "8px 14px",

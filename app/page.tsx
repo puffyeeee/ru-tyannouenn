@@ -36,7 +36,7 @@ export default function HomePage() {
               color: "#3b2b1a",
             }}
           >
-            ルーちゃん応援クイズとPDFモード
+            ルーちゃん応援PDFモード
           </h1>
         </div>
         <p
@@ -67,10 +67,6 @@ export default function HomePage() {
           gap: 12,
         }}
       >
-        <Link href="/quiz" className="btn-wood" style={{ textAlign: "center" }}>
-          クイズをする（選択肢モード）
-        </Link>
-
         <Link
           href="/pdf-practice"
           className="btn-wood-outline"
