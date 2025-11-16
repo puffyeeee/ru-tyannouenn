@@ -1,66 +1,79 @@
-// PDFビュー部分だけ抜粋（他のロジックは既存どおり）
+"use client";
 
-      {/* PDFビュー */}
-      <section
-        className="card-wood"
-        style={{
-          marginBottom: 14,
-          display: "flex",
-          flexDirection: "column",
-        }}
-      >
-        <div
+import React from "react";
+
+const PdfPracticePage: React.FC = () => {
+  return (
+    <div
+      style={{
+        padding: 24,
+        maxWidth: 800,
+        margin: "0 auto",
+        background: "#fff",
+        color: "#32241a",
+        lineHeight: 1.6,
+      }}
+    >
+      {/* タイトル部分 */}
+      <header style={{ marginBottom: 24 }}>
+        <h1
           style={{
-            marginBottom: 6,
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            fontSize: 12,
+            fontSize: 22,
+            marginBottom: 4,
+            borderBottom: "1px solid #e0d2c6",
+            paddingBottom: 4,
           }}
         >
-          <span className="section-label">森の勉強用PDF</span>
-          <span style={{ color: "#7b6960" }}>
-            窓の外のPDFを見ながら、下の木の机で記録していこうね。
-          </span>
-        </div>
+          PDF 練習モード（仮）
+        </h1>
+        <p style={{ fontSize: 12, color: "#7b6960" }}>
+          PDF を見ながらでも読みやすいように、シンプルなレイアウトにしてあるページだよ。
+        </p>
+      </header>
 
-        <div className="wood-frame">
-          <div className="wood-frame-decoration">
-            きょうの教材
-          </div>
-          <div className="wood-frame-inner">
-            {currentPdfUrl ? (
-              <iframe
-                src={currentPdfUrl}
-                style={{
-                  width: "100%",
-                  height: 420,
-                  border: "none",
-                  backgroundColor: "#f3eee4",
-                }}
-              />
-            ) : (
-              <div
-                style={{
-                  width: "100%",
-                  height: 420,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: 13,
-                  color: "#9a8570",
-                  padding: 16,
-                  textAlign: "center",
-                }}
-              >
-                まだPDFファイルが読み込まれていないみたい。
-                <br />
-                上の「PDFを追加する」から、ルーちゃんが使いたいPDFを選んでね。
-              </div>
-            )}
-          </div>
-          <div className="wood-frame-branch">
-            🌿 風がすこしふいてるよ
-          </div>
-        </div>
+      {/* 説明文 */}
+      <section style={{ marginBottom: 24 }}>
+        <p style={{ fontSize: 13, marginBottom: 8 }}>
+          ここでは、将来 PDF として出力することを想定した問題レイアウトを試す予定だよ。
+        </p>
+        <p style={{ fontSize: 13 }}>
+          今はまだ準備中だから、簡単なテキストだけ置いておくね。
+          あとで本番用の問題や図をここに並べて、PDF にして印刷したり、
+          iPad で見ながら解けるようにしていく感じをイメージしてるよ。
+        </p>
       </section>
+
+      {/* 仮の問題ブロック */}
+      <section
+        style={{
+          border: "1px solid #e0d2c6",
+          borderRadius: 8,
+          padding: 16,
+          marginBottom: 16,
+          background: "#fffdf7",
+        }}
+      >
+        <p style={{ fontSize: 12, marginBottom: 4 }}>【例題 1】（サンプル）</p>
+        <p style={{ fontSize: 13, marginBottom: 8 }}>
+          森の小屋で、ルーちゃんが PDF を見ながらお勉強するとき、
+          一番大事にしたいことはどれかな？
+        </p>
+        <ol style={{ fontSize: 13, paddingLeft: 20 }}>
+          <li>文字が小さすぎず、読みやすいこと</li>
+          <li>行間が詰まりすぎていないこと</li>
+          <li>色が薄すぎず、コントラストがあること</li>
+          <li>ページをめくるときに、内容が途中でブチっと切れないこと</li>
+        </ol>
+      </section>
+
+      <section style={{ marginTop: 24 }}>
+        <p style={{ fontSize: 12, color: "#7b6960" }}>
+          ※いまはまだ「PDF 練習モード」のテスト段階だよ。
+          ルーちゃんが本当に使いやすい形になるように、少しずつ一緒に育てていこ。
+        </p>
+      </section>
+    </div>
+  );
+};
+
+export default PdfPracticePage;

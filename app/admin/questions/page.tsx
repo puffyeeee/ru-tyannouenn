@@ -1,3 +1,15 @@
+"use client";
+
+import React from "react";
+
+export default function AdminQuestionsPage() {
+  return (
+    <div style={{ padding: 24 }}>
+      <h1 style={{ fontSize: 20, marginBottom: 12 }}>問題管理（仮）</h1>
+      <p style={{ fontSize: 13, color: "#7b6960", marginBottom: 16 }}>
+        ここは管理者用の問題編集ページだよ。今はまだ準備中だから、森の小屋でのんびり待っててね。
+      </p>
+
       <div style={{ marginBottom: 10 }}>
         <label
           style={{
@@ -10,8 +22,8 @@
           歯科国試の分野
         </label>
         <select
-          value={editing.field ?? "その他"}
-          onChange={(e) => handleChangeField(e.target.value as DentalField)}
+          value="その他"
+          onChange={() => {}}
           style={{
             borderRadius: 8,
             border: "1px solid #ddd",
@@ -19,10 +31,9 @@
             fontSize: 13,
           }}
         >
-          {dentalFields.map((f) => (
-            <option key={f.value} value={f.value}>
-              {f.label}
-            </option>
-          ))}
+          <option value="その他">その他</option>
         </select>
       </div>
+    </div>
+  );
+}
