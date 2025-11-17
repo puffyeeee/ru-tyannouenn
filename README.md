@@ -86,15 +86,18 @@ NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 
 Once those secrets exist, prefer letting the workflow deploy automatically on every `main` push. Keep the manual Firebase command (below) for hotfixes or when you explicitly need to bypass CI.
 
+> Hosting uses Firebase's Web Frameworks integration (`frameworksBackend`). During deploy the Firebase CLI builds your Next.js SSR bundle and provisions the serving infrastructure (Cloud Functions + Hosting rewrites) automatically.
+
 ## Firebase Hosting Deployment (manual)
 ```bash
+npm run lint
 npm run build
 firebase login
+firebase experiments:enable webframeworks
 firebase use default # or firebase use <your-project>
 firebase deploy --only hosting
 ```
-The Firebase config in `firebase.json` expects the Next.js build output. `firebase deploy --only hosting` uploads the optimized build immediately. Re-run `npm run build` whenever the source changes before redeploying.
-
+The CLI's web frameworks support will rebuild your Next.js app and push both the Hosting assets and the SSR backend. Re-run the commands above whenever you need to hotfix outside of CI.
 ## Feedback Loop
 - Use the template in `docs/feedback.md` to capture stakeholder notes.
 - Log each submission as a GitHub issue (label `feedback`) so it can be triaged in planning sessions.
