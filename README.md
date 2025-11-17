@@ -36,20 +36,23 @@ firebase env:set NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID "G-XXXX" --project critter-
 firebase env:set SENTRY_DSN "https://..." NEXT_PUBLIC_SENTRY_DSN "https://..." --project critter-743d3
 ```
 
-### GitHub Secrets (for CI)
-Use the GitHub CLI (or repository settings) to provide the workflow secrets before enabling automatic deploys:
+### Firebase Hosting environment steps
+1. Copy your local values into production by piping `.env.local` through `firebase env:set ...` as above.
+2. Verify the settings anytime with `firebase env:get --project critter-743d3` (add `> .env.production` if you want a backup).
+3. When rotating keys, update Firebase first, then redeploy so SSR/API routes receive the new values.
+
+### GitHub Actions secrets
+Set the same values in your GitHub repository so the CI workflow can build with identical configuration. From the repo root you can use the CLI:
 
 ```bash
-# Authenticating Firebase CLI
-firebase login:ci
-
-# Repository secrets
-gh secret set FIREBASE_TOKEN --body "<token from firebase login:ci>"
-gh secret set OPENAI_API_KEY --body "$OPENAI_API_KEY"
-gh secret set SENTRY_DSN --body "$SENTRY_DSN"
-gh secret set NEXT_PUBLIC_SENTRY_DSN --body "$NEXT_PUBLIC_SENTRY_DSN"
-gh secret set NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID --body "$NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID"
+gh secret set OPENAI_API_KEY --body "sk-live-..."
+gh secret set SENTRY_DSN --body "https://..."
+gh secret set NEXT_PUBLIC_SENTRY_DSN --body "https://..."
+gh secret set NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID --body "G-XXXXXXX"
+gh secret set FIREBASE_TOKEN --body "$(firebase login:ci)"
 ```
+
+Alternatively, navigate to **GitHub → Settings → Secrets and variables → Actions** and paste the values manually.
 
 ## Local Development
 ```bash
@@ -81,9 +84,7 @@ SENTRY_DSN / NEXT_PUBLIC_SENTRY_DSN
 NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
 ```
 
-**Recommended flow:**
-- Rely on the GitHub Action for every merge to `main` so hosting always reflects the latest reviewed code.
-- Use the manual deploy steps below only for hotfixes (e.g., before the workflow secrets are configured or when debugging).
+Once those secrets exist, prefer letting the workflow deploy automatically on every `main` push. Keep the manual Firebase command (below) for hotfixes or when you explicitly need to bypass CI.
 
 ## Firebase Hosting Deployment (manual)
 ```bash
