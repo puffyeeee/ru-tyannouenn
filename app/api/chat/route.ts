@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import * as Sentry from "@sentry/nextjs";
 import { openai } from "@/lib/openai";
 import { characters, CharacterId } from "@/lib/characters";
 
@@ -80,7 +81,8 @@ ${userMessage}
       `${char.name}だよ。ルーちゃんの話を聞けてうれしいな。`;
 
     return NextResponse.json({ message });
-  } catch {
+  } catch (error) {
+    Sentry.captureException(error);
     return NextResponse.json(
       {
         message:

@@ -1,6 +1,7 @@
 import "./globals.css";
-import React from "react";
+import React, { Suspense } from "react";
 import { SecretGate } from "@/components/SecretGate";
+import { FirebaseAnalytics } from "@/components/FirebaseAnalytics";
 
 export const metadata = {
   title: "ルーちゃんの森の勉強小屋",
@@ -20,6 +21,9 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
+        <Suspense fallback={null}>
+          <FirebaseAnalytics />
+        </Suspense>
         <SecretGate>
           <main className="main-wrapper">{children}</main>
         </SecretGate>

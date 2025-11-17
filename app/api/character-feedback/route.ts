@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import * as Sentry from "@sentry/nextjs";
 import { openai } from "@/lib/openai";
 import { characters, CharacterId } from "@/lib/characters";
 import type { DentalField } from "@/lib/quiz";
@@ -139,7 +140,8 @@ export async function POST(req: NextRequest) {
       `${char.name}だよ。ルーちゃん、ここまでちゃんと問題と向き合ってるの、ほんとにすごいと思うよ。`;
 
     return NextResponse.json({ message });
-  } catch {
+  } catch (error) {
+    Sentry.captureException(error);
     return NextResponse.json(
       {
         message:
