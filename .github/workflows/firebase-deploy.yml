@@ -37,4 +37,4 @@ jobs:
         run: |
           firebase experiments:enable webframeworks
           firebase use --token "$FIREBASE_TOKEN" critter-743d3
-          firebase deploy --only hosting --token "$FIREBASE_TOKEN"
+          firebase deploy --only hosting:critter-743d3 --token "$FIREBASE_TOKEN"

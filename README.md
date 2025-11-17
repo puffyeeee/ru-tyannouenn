@@ -73,7 +73,7 @@ npm run build
 - Tune sampling via the `SENTRY_*` env vars above; leave them unset to fall back to the defaults committed in code.
 
 ## Continuous Deployment (GitHub Actions)
-`.github/workflows/firebase-deploy.yml` runs on pushes to `main` (and manual dispatch). It performs `npm ci`, `npm run lint`, `npm run build`, then `firebase deploy --only hosting`.
+`.github/workflows/firebase-deploy.yml` runs on pushes to `main` (and manual dispatch). It performs `npm ci`, `npm run lint`, `npm run build`, then `firebase deploy --only hosting:critter-743d3`.
 
 Required GitHub secrets:
 
@@ -95,9 +95,9 @@ npm run build
 firebase login
 firebase experiments:enable webframeworks
 firebase use default # or firebase use <your-project>
-firebase deploy --only hosting
+firebase deploy --only hosting:critter-743d3
 ```
-The CLI's web frameworks support will rebuild your Next.js app and push both the Hosting assets and the SSR backend. Re-run the commands above whenever you need to hotfix outside of CI.
+The CLI's web frameworks support will rebuild your Next.js app and push both the Hosting assets and the SSR backend. Replace `critter-743d3` if you deploy to another Hosting site.
 ## Feedback Loop
 - Use the template in `docs/feedback.md` to capture stakeholder notes.
 - Log each submission as a GitHub issue (label `feedback`) so it can be triaged in planning sessions.

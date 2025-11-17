@@ -1,6 +1,7 @@
 {
   "hosting": [
     {
+      "site": "critter-743d3",
       "source": ".",
       "ignore": [
         "firebase.json",
