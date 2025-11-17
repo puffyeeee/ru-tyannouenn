@@ -139,7 +139,7 @@ export async function POST(req: NextRequest) {
       `${char.name}だよ。ルーちゃん、ここまでちゃんと問題と向き合ってるの、ほんとにすごいと思うよ。`;
 
     return NextResponse.json({ message });
-  } catch (e) {
+  } catch {
     return NextResponse.json(
       {
         message:

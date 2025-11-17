@@ -3,7 +3,7 @@
 import React from "react";
 import { useSearchParams, useRouter } from "next/navigation";
 import { CharacterMessage } from "@/components/CharacterMessage";
-import { getRandomCharacter } from "@/lib/characters";
+import { CharacterId, getRandomCharacter } from "@/lib/characters";
 
 export default function ResultPage() {
   const params = useSearchParams();
@@ -13,7 +13,8 @@ export default function ResultPage() {
   const accuracy = total > 0 ? Math.round((correct / total) * 100) : 0;
 
   const [aiMessage, setAiMessage] = React.useState<string | null>(null);
-  const [aiCharacterId, setAiCharacterId] = React.useState<string | null>(null);
+  const [aiCharacterId, setAiCharacterId] =
+    React.useState<CharacterId | null>(null);
   const [loading, setLoading] = React.useState(false);
 
   React.useEffect(() => {
@@ -48,7 +49,7 @@ export default function ResultPage() {
         }
         const data = await res.json();
         setAiMessage(data.message);
-      } catch (e) {
+      } catch {
         setAiMessage(
           `${char.name}だよ。ルーちゃん、ここまでやりきっただけで本当にすごいと思うんだ。\n点数よりも、チャレンジしたことをいっしょに喜びたいな。`
         );
@@ -99,7 +100,7 @@ export default function ResultPage() {
       {aiMessage && aiCharacterId && (
         <div style={{ marginTop: 12 }}>
           <CharacterMessage
-            characterId={aiCharacterId as any}
+            characterId={aiCharacterId}
             text={aiMessage}
           />
         </div>

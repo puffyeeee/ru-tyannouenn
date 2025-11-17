@@ -123,7 +123,7 @@ export async function POST(req: NextRequest) {
       `${char.name}だよ。ルーちゃん、ここまでがんばったことをいっしょに喜びたいな。`;
 
     return NextResponse.json({ message });
-  } catch (e) {
+  } catch {
     return NextResponse.json(
       {
         message:

@@ -49,7 +49,8 @@ export default function ChatPage() {
         ...prev,
         { from: "character", characterId, text: data.message },
       ]);
-    } catch (e) {
+    } catch (error) {
+      console.error("Failed to fetch chat reply", error);
       setMessages((prev) => [
         ...prev,
         {

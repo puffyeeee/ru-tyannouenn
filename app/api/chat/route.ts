@@ -80,7 +80,7 @@ ${userMessage}
       `${char.name}だよ。ルーちゃんの話を聞けてうれしいな。`;
 
     return NextResponse.json({ message });
-  } catch (e) {
+  } catch {
     return NextResponse.json(
       {
         message:
