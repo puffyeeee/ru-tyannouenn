@@ -65,3 +65,59 @@
 
 [info]    Creating an optimized production build ...
 
+[info]  ✓ Compiled successfully
+
+[info]    Linting and checking validity of types ...
+
+[info]    Collecting page data ...
+
+[info]    Generating static pages (0/13) ...
+
+[info]    Generating static pages (3/13) 
+
+[info]    Generating static pages (6/13) 
+
+[info]    Generating static pages (9/13) 
+
+[info]  ✓ Generating static pages (13/13)
+
+[info]    Finalizing page optimization ...
+
+[info]    Collecting build traces ...
+
+[info] 
+
+[info] Route (app)                              Size     First Load JS
+┌ ○ /                                    10.9 kB        98.8 kB
+├ ○ /_not-found                          1.03 kB        88.9 kB
+├ ○ /admin/questions                     833 B          88.7 kB
+├ ƒ /api/character-comment               0 B                0 B
+├ ƒ /api/character-feedback              0 B                0 B
+├ ƒ /api/chat                            0 B                0 B
+├ ƒ /api/encourage                       0 B                0 B
+├ ○ /chat                                2.61 kB        90.5 kB
+├ ○ /pdf-practice                        1.39 kB        89.3 kB
+├ ○ /pdf-summary                         1.41 kB        89.3 kB
+└ ○ /result                              2.59 kB        90.5 kB
++ First Load JS shared by all            87.9 kB
+  ├ chunks/117-201b6bb5a3454c2c.js       31.9 kB
+  ├ chunks/fd9d1056-d91e217c0a456c44.js  53.8 kB
+  └ other shared chunks (total)          2.22 kB
+
+
+
+[info] ○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+
+[info] Building a Cloud Function to run this application. This is needed due to:
+[info]  • non-static component /api/encourage/route
+[info]  • non-static component /api/chat/route
+[info]  • non-static component /api/character-comment/route
+[info]  • non-static component /api/character-feedback/route
+[info] 
+[debug] [2025-11-18T14:02:11.673Z] Checked if tokens are valid: true, expires at: 1763478022647
+[debug] [2025-11-18T14:02:11.673Z] Checked if tokens are valid: true, expires at: 1763478022647
+[debug] [2025-11-18T14:02:11.673Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/critter-743d3/sites/critter-743d3 [none]
+[debug] [2025-11-18T14:02:12.296Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/critter-743d3/sites/critter-743d3 200
+[debug] [2025-11-18T14:02:12.296Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/critter-743d3/sites/critter-743d3 {"name":"projects/critter-743d3/sites/critter-743d3","defaultUrl":"https://critter-743d3.web.app","type":"DEFAULT_SITE"}
