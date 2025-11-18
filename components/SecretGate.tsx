@@ -11,7 +11,7 @@ export const SecretGate: React.FC<{ children: React.ReactNode }> = ({
   const [input, setInput] = React.useState("");
   const [error, setError] = React.useState<string | null>(null);
 
-  const secret = process.env.NEXT_PUBLIC_APP_SECRET_CODE ?? "";
+  const secret = "ruritemoayatemo09260416";
 
   React.useEffect(() => {
     if (typeof window === "undefined") return;
@@ -116,7 +116,7 @@ export const SecretGate: React.FC<{ children: React.ReactNode }> = ({
               type="password"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="三子ちゃんとチモシー"
+              placeholder="Password"
               className="input-wood"
               style={{ marginBottom: 8 }}
             />
