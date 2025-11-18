@@ -1,0 +1,67 @@
+[debug] [2025-11-18T14:00:23.231Z] ----------------------------------------------------------------------
+[debug] [2025-11-18T14:00:23.233Z] Command:       /usr/local/share/nvm/versions/node/v22.21.1/bin/node /home/codespace/nvm/current/bin/firebase deploy --only hosting
+[debug] [2025-11-18T14:00:23.233Z] CLI Version:   14.25.0
+[debug] [2025-11-18T14:00:23.233Z] Platform:      linux
+[debug] [2025-11-18T14:00:23.233Z] Node Version:  v22.21.1
+[debug] [2025-11-18T14:00:23.234Z] Time:          Tue Nov 18 2025 14:00:23 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-11-18T14:00:23.234Z] Env Overrides: GITHUB_API_URL, GITHUB_API_URL
+[debug] [2025-11-18T14:00:23.234Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-11-18T14:00:23.522Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-11-18T14:00:23.522Z] > authorizing via signed-in user (duffy.chocolate.aya@gmail.com)
+[debug] [2025-11-18T14:00:23.523Z] [iam] checking project critter-743d3 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2025-11-18T14:00:23.524Z] Checked if tokens are valid: false, expires at: 1763454750024
+[debug] [2025-11-18T14:00:23.524Z] Checked if tokens are valid: false, expires at: 1763454750024
+[debug] [2025-11-18T14:00:23.524Z] > refreshing access token with scopes: []
+[debug] [2025-11-18T14:00:23.527Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2025-11-18T14:00:23.527Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-11-18T14:00:23.647Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2025-11-18T14:00:23.647Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2025-11-18T14:00:23.652Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/critter-743d3:testIamPermissions [none]
+[debug] [2025-11-18T14:00:23.652Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/critter-743d3:testIamPermissions x-goog-quota-user=projects/critter-743d3
+[debug] [2025-11-18T14:00:23.652Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/critter-743d3:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-11-18T14:00:24.686Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/critter-743d3:testIamPermissions 200
+[debug] [2025-11-18T14:00:24.686Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/critter-743d3:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2025-11-18T14:00:24.687Z] Checked if tokens are valid: true, expires at: 1763478022647
+[debug] [2025-11-18T14:00:24.687Z] Checked if tokens are valid: true, expires at: 1763478022647
+[debug] [2025-11-18T14:00:24.687Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/critter-743d3 [none]
+[debug] [2025-11-18T14:00:24.996Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/critter-743d3 200
+[debug] [2025-11-18T14:00:24.996Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/critter-743d3 {"projectId":"critter-743d3","projectNumber":"827901153918","displayName":"Critter","name":"projects/critter-743d3","resources":{"hostingSite":"critter-743d3"},"state":"ACTIVE","etag":"1_1f14347a-75c1-436c-94b9-7cd35036b0b7"}
+[debug] [2025-11-18T14:00:27.469Z] Checked if tokens are valid: true, expires at: 1763478022647
+[debug] [2025-11-18T14:00:27.469Z] Checked if tokens are valid: true, expires at: 1763478022647
+[debug] [2025-11-18T14:00:27.470Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/critter-743d3/sites pageToken=&pageSize=10
+[debug] [2025-11-18T14:00:28.225Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/critter-743d3/sites 200
+[debug] [2025-11-18T14:00:28.225Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/critter-743d3/sites {"sites":[{"name":"projects/critter-743d3/sites/critter-743d3","defaultUrl":"https://critter-743d3.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2025-11-18T14:00:28.225Z] Checked if tokens are valid: true, expires at: 1763478022647
+[debug] [2025-11-18T14:00:28.226Z] Checked if tokens are valid: true, expires at: 1763478022647
+[debug] [2025-11-18T14:00:28.226Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/critter-743d3/sites 
+[debug] [2025-11-18T14:00:28.896Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/critter-743d3/sites 200
+[debug] [2025-11-18T14:00:28.896Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/critter-743d3/sites {"sites":[{"name":"projects/critter-743d3/sites/critter-743d3","defaultUrl":"https://critter-743d3.web.app","type":"DEFAULT_SITE"}]}
+[debug] [2025-11-18T14:00:28.896Z] Checked if tokens are valid: true, expires at: 1763478022647
+[debug] [2025-11-18T14:00:28.896Z] Checked if tokens are valid: true, expires at: 1763478022647
+[debug] [2025-11-18T14:00:28.896Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/critter-743d3/webApps/-/config [none]
+[debug] [2025-11-18T14:00:29.552Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/critter-743d3/webApps/-/config 200
+[debug] [2025-11-18T14:00:29.552Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/critter-743d3/webApps/-/config {"projectId":"critter-743d3","storageBucket":"critter-743d3.firebasestorage.app","apiKey":"AIzaSyA4kmKl9WO513hrPBnKg5sX5XsxMT6ezsI","authDomain":"critter-743d3.firebaseapp.com","messagingSenderId":"827901153918","projectNumber":"827901153918","version":"2"}
+[info] 
+   Thank you for trying our early preview of Next.js support on Firebase Hosting.
+   During the preview, support is best-effort and breaking changes can be expected. Proceed with caution.
+
+   Documentation: https://firebase.google.com/docs/hosting/frameworks/nextjs
+   File a bug: https://github.com/firebase/firebase-tools/issues/new?template=bug_report.md
+   Submit a feature request: https://github.com/firebase/firebase-tools/issues/new?template=feature_request.md
+
+   We'd love to learn from you. Express your interest in helping us shape the future of Firebase Hosting: https://goo.gle/41enW5X
+
+[debug] [2025-11-18T14:00:34.763Z] Checked if tokens are valid: true, expires at: 1763478022647
+[debug] [2025-11-18T14:00:34.763Z] Checked if tokens are valid: true, expires at: 1763478022647
+[debug] [2025-11-18T14:00:34.764Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/critter-743d3/sites/critter-743d3 [none]
+[debug] [2025-11-18T14:00:35.388Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/critter-743d3/sites/critter-743d3 200
+[debug] [2025-11-18T14:00:35.388Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/critter-743d3/sites/critter-743d3 {"name":"projects/critter-743d3/sites/critter-743d3","defaultUrl":"https://critter-743d3.web.app","type":"DEFAULT_SITE"}
+[info]   ▲ Next.js 14.2.33
+
+[info]   - Experiments (use with caution):
+    · instrumentationHook
+
+
+[info]    Creating an optimized production build ...
+
